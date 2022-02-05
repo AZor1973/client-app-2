@@ -28,7 +28,7 @@
                 <th scope="col">Редактировать</th>
                 <th scope="col">Удалить</th>
                 <th scope="col">Информация</th>
-<!--                <th scope="col">В Корзину</th>-->
+                <th scope="col">В Корзину</th>
             </tr>
             </thead>
             <tbody>
@@ -71,10 +71,10 @@
                     <td>
                         <a type="button" class="btn btn-warning" th:href="@{'/api/v1/product/' + ${product.id}}">Информация</a>
                     </td>
-<!--                    <td>-->
-<!--                        <a type="button" class="btn btn-warning" th:href="@{/api/v1/cart/add(id=${product.id})}">В-->
-<!--                            Корзину</a>-->
-<!--                    </td>-->
+                    <td>
+                        <a type="button" class="btn btn-warning" th:href="@{/api/v1/cart/add(id=${product.id})}">В
+                            Корзину</a>
+                    </td>
 
                 </div>
             </tr>
