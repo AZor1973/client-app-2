@@ -63,13 +63,9 @@ public class CartController {
     }
 
     @GetMapping("/order")
-    public String createOrder(Model model){
+    public String createOrder(){
         orderIsProcessed = true;
         products.clear();
-        Map<String, Object> attributes = new ConcurrentHashMap<>();
-        attributes.put("products", products);
-        attributes.put("orderIsProcessed", orderIsProcessed);
-        model.addAllAttributes(attributes);
-        return "cart";
+        return "order-form";
     }
 }
