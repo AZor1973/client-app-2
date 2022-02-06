@@ -30,6 +30,10 @@
                        th:classappend="${activeTab == 'Cart' ? 'active' : ''}" aria-current="page"
                        th:href="@{/api/v1/cart}">Корзина</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activeTab == 'OrderList' ? 'active' : ''}"
+                       aria-current="page" th:href="@{/api/v1/order/all}">Список заказов</a>
+                </li>
 <!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
 <!--                    <form th:action="@{/logout}" method="post">-->
 <!--                        <input type="submit" class="btn btn-danger" th:value="Выйти">-->
