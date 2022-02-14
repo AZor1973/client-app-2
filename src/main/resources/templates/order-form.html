@@ -14,7 +14,7 @@
 <div th:replace="~{navbar :: navi(ProductForm)}"></div>
 
 <div class="container">
-    <form th:action="@{/api/v1/order/create}" th:object="${order}" th:method="post">
+    <form th:action="@{/shop/order/create}" th:object="${order}" th:method="post">
         <input type="hidden" th:field="*{id}">
         <div class="mb-3">
             <label for="address-id" class="form-label">Адрес</label>

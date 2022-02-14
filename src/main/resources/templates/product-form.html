@@ -14,38 +14,50 @@
 <div th:replace="~{navbar :: navi(ProductForm)}"></div>
 
 <div class="container">
-    <form th:action="@{/api/v1/product}" th:object="${product}" th:method="post">
+    <form th:action="@{/shop/product}" th:object="${product}" th:method="post">
         <input type="hidden" th:field="*{id}">
         <div class="mb-3">
             <label for=" title-id" class="form-label">Название продукта</label>
             <input type="text" class="form-control" id=" title-id" th:field="*{title}" aria-describedby="emailHelp">
 
         </div>
+
         <div class="mb-3">
             <label for="cost-id" class="form-label">Цена</label>
             <input type="text" class="form-control" id="cost-id" th:field="*{cost}">
         </div>
+
         <div class="mb-3">
             <label for="date-id" class="form-label">Дата изготовления</label>
-<!--            <input type="date" class="form-control" id="date-id" th:field="*{manufactureDate}">-->
+            <!--            <input type="date" class="form-control" id="date-id" th:field="*{manufactureDate}">-->
             <input type="text" class="form-control" id="date-id" th:field="*{manufactureDate}">
         </div>
+
         <div class="mb-3">
             <label for="manufacturer-id" class="form-label">Производитель</label>
-            <input type="text" class="form-control" id="manufacturer-id" th:field="*{manufacturer}">
+            <select th:type="checbox" class="form-select" aria-label="Default select example" id="manufacturer-id"
+                    th:field="*{manufacturer}">
+                <option th:each="manufacturer : ${manufacturers}"
+                        th:value="${manufacturer.name}"
+                        th:text="${manufacturer.name}"></option>
+            </select>
+            <!--            <input type="text" class="form-control" id="manufacturer-id" th:field="*{manufacturer}">-->
         </div>
+
         <div class="mb-3">
             <label for="category-id" class="form-label">Категория</label>
             <input type="text" class="form-control" id="category-id" th:field="*{category}">
         </div>
+
         <div class="mb-3">
             <label for="status-id" class="form-label">Наличие товара</label>
             <select class="form-select" aria-label="Default select example" id="status-id" th:field="*{status}">
                 <option th:each="statusValue : ${T(ru.gb.api.common.enums.Status).values()}"
-                th:value="${statusValue.name()}"
-                th:text="${statusValue.title}"></option>
+                        th:value="${statusValue.name()}"
+                        th:text="${statusValue.title}"></option>
             </select>
         </div>
+
         <div class="mb-3">
             <button type="submit" class="btn btn-primary" id="submit-id">Submit</button>
         </div>

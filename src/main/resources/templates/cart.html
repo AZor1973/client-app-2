@@ -28,14 +28,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <a type="button" class="btn btn-warning" th:href="@{/api/v1/cart/order}">Оформить заказ</a>
+                <a type="button" class="btn btn-warning" th:href="@{/shop/cart/order}">Оформить заказ</a>
                 <tr th:classappend="${product.status.name() == 'ACTIVE'} ? 'table-success' : 'table-secondary'"
                     th:each="product: ${products.keySet()}" th:attr="prod_index=${product.id}">
                     <td th:text="${product.title}"></td>
                     <td th:text="${product.cost}"></td>
                     <td th:text="${products.get(product)}"></td>
                     <td>
-                        <a type="button" class="btn btn-danger" th:href="@{/api/v1/cart/delete(id=${product.id})}">Удалить</a>
+                        <a type="button" class="btn btn-danger" th:href="@{/shop/cart/delete(id=${product.id})}">Удалить</a>
                     </td>
                 </tr>
                 </tbody>

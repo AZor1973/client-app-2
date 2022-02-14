@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Controller
-@RequestMapping("/api/v1/cart")
+@RequestMapping("/shop/cart")
 @RequiredArgsConstructor
 public class CartController {
 
@@ -40,12 +40,12 @@ public class CartController {
             for (ProductDto productDto : products.keySet()) {
                 if (productDto.getId().equals(id)) {
                     products.merge(productDto, 1, Integer::sum);
-                    return "redirect:/api/v1/product/all";
+                    return "redirect:/shop/product/all";
                 }
             }
             products.put(productGateway.getProduct(id).getBody(), 1);
         }
-        return "redirect:/api/v1/product/all";
+        return "redirect:/shop/product/all";
     }
 
     @GetMapping("/delete")
@@ -59,7 +59,7 @@ public class CartController {
                 }
             }
         }
-        return "redirect:/api/v1/cart";
+        return "redirect:/shop/cart";
     }
 
     @GetMapping("/order")

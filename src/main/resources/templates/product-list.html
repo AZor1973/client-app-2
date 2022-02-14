@@ -59,20 +59,20 @@
                 <div>
                     <td>
                         <a type="button" class="btn btn-warning"
-                           th:href="@{/api/v1/product(id=${product.id})}">Редактировать</a>
+                           th:href="@{/shop/product(id=${product.id})}">Редактировать</a>
                     </td>
                     <td>
                         <!--                    th:href="@{/product/delete/' + ${product.id}}"-->
                         <a type="button" class="btn btn-danger"
-                           th:href="@{/api/v1/product/delete(id=${product.id})}">Удалить</a>
+                           th:href="@{/shop/product/delete(id=${product.id})}">Удалить</a>
                     </td>
                 </div>
                 <div>
                     <td>
-                        <a type="button" class="btn btn-warning" th:href="@{'/api/v1/product/' + ${product.id}}">Информация</a>
+                        <a type="button" class="btn btn-warning" th:href="@{'/shop/product/' + ${product.id}}">Информация</a>
                     </td>
                     <td>
-                        <a type="button" class="btn btn-warning" th:href="@{/api/v1/cart/add(id=${product.id})}">В
+                        <a type="button" class="btn btn-warning" th:href="@{/shop/cart/add(id=${product.id})}">В
                             Корзину</a>
                     </td>
 
