@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Controller
 @RequestMapping("/shop/cart")
 @RequiredArgsConstructor
-public class CartController {
+public class OrderController {
 
     private final Map<ProductDto, Integer> products = new ConcurrentHashMap<>();
     private final ProductGateway productGateway;
