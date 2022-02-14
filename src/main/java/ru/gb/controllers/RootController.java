@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class RootController {
     @GetMapping
     public String getRootPath(){
-        return "redirect:/api/v1/product/all";
+        return "redirect:/shop/product/all";
     }
 }

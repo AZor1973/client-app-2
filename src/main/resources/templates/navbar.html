@@ -7,7 +7,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navi(activeTab)">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/api/v1/product/all}">GB Shop</a>
+        <a class="navbar-brand" th:href="@{/shop/product/all}">GB Shop</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,19 +16,23 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" th:classappend="${activeTab == 'ProductList' ? 'active' : ''}"
-                       aria-current="page" th:href="@{/api/v1/product/all}">Список продуктов</a>
+                       aria-current="page" th:href="@{/shop/product/all}">Список продуктов</a>
                 </li>
                 <li class="nav-item">
 <!--                    <a class="nav-link" sec:authorize="hasAuthority('ADMIN')"-->
                     <a class="nav-link"
                        th:classappend="${activeTab == 'ProductForm' ? 'active' : ''}"
-                       th:href="@{/api/v1/product}">Добавить продукт</a>
+                       th:href="@{/shop/product}">Добавить продукт</a>
                 </li>
                 <li class="nav-item">
 <!--                    <a class="nav-link" sec:authorize="hasAuthority('USER')"-->
                     <a class="nav-link"
                        th:classappend="${activeTab == 'Cart' ? 'active' : ''}" aria-current="page"
-                       th:href="@{/api/v1/cart}">Корзина</a>
+                       th:href="@{/shop/cart}">Корзина</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${activeTab == 'OrderList' ? 'active' : ''}"
+                       aria-current="page" th:href="@{/shop/order/all}">Список заказов</a>
                 </li>
 <!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
 <!--                    <form th:action="@{/logout}" method="post">-->
