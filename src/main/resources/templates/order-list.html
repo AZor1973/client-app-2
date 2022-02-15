@@ -24,7 +24,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="product: ${orders}" th:attr="order_index=${order.id}">
+            <tr th:each="order : ${orders}" th:attr="order_index=${order.id}">
                 <td th:text="${order.id}"></td>
                 <td th:text="${order.status}"></td>
             </tr>

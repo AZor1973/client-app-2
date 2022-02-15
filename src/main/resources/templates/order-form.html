@@ -14,7 +14,7 @@
 <div th:replace="~{navbar :: navi(ProductForm)}"></div>
 
 <div class="container">
-    <form th:action="@{/shop/order/create}" th:object="${order}" th:method="post">
+    <form th:action="@{/shop/cart/order/create}" th:object="${order}" th:method="post">
         <input type="hidden" th:field="*{id}">
         <div class="mb-3">
             <label for="address-id" class="form-label">Адрес</label>
@@ -31,11 +31,15 @@
         </div>
         <div class="mb-3">
             <label for="phoneNumber-id" class="form-label">Номер телефона</label>
-            <input type="text" class="form-control" id="phoneNumber-id" th:field="*{phoneNumber}">
+            <input type="text" class="form-control" id="phoneNumber-id" th:field="*{phone}">
         </div>
         <div class="mb-3">
             <label for="mail-id" class="form-label">Почта</label>
             <input type="text" class="form-control" id="mail-id" th:field="*{mail}">
+        </div>
+        <div class="mb-3">
+            <label for="delivery_date-id" class="form-label">Дата доставки</label>
+            <input type="text" class="form-control" id="delivery_date-id" th:field="*{deliveryDate}">
         </div>
         <div class="mb-3">
             <button type="submit" class="btn btn-primary" id="submit-id">Оформить заказ</button>
