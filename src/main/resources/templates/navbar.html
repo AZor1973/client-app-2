@@ -28,7 +28,7 @@
 <!--                    <a class="nav-link" sec:authorize="hasAuthority('USER')"-->
                     <a class="nav-link"
                        th:classappend="${activeTab == 'Cart' ? 'active' : ''}" aria-current="page"
-                       th:href="@{/shop/cart}">Корзина</a>
+                       th:href="@{/shop/order/cart}">Корзина</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:classappend="${activeTab == 'OrderList' ? 'active' : ''}"
