@@ -46,7 +46,7 @@ public class OrderController {
         return "redirect:/shop/product/all";
     }
 
-    @DeleteMapping("/cart/delete")
+    @GetMapping("/cart/delete")
     public String deleteProductFromCart(@RequestParam(name = "id") Long id) {
         for (ProductDto productDto : products.keySet()) {
             if (productDto.getId().equals(id)) {
@@ -57,7 +57,7 @@ public class OrderController {
                 }
             }
         }
-        return "redirect:/shop/cart";
+        return "redirect:/shop/order/cart";
     }
 
     @GetMapping
